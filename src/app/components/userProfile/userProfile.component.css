@@ -1,11 +1,51 @@
 .button {
     position: absolute;
     top:50%;
-    background-color:#6077da3a;
+    background-color:#FFFFFF;
     color: #fff;
-    border:none; 
+    border:#437BAC; 
     border-radius:10px; 
     padding:15px;
     min-height:30px; 
     min-width: 120px;
   }
+ 
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: #437BAC;
+      background-color: #FFFFFF;
+      color: white;
+    }
+    input[type=number] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border:#437BAC;
+      background-color: #FFFFFF;
+      color: white;
+    }
+    input[type=email] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: ;
+      background-color: #FFFFFF;
+      color: white;
+    }
+    input[id="state"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: #437BAC;
+      background-color: #FFFFFF;
+      color: white;
+    }
+    body {
+      background-color: #DBDBDB;
+    }
