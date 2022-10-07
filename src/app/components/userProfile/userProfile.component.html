@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
 <app-navbar></app-navbar>
   <div class="container-fluid">
         <div class="d-flex flex-column justify-content-center"></div>
@@ -18,29 +17,45 @@
                             <input type="text" class="form-control" formControlName="firstname" id="firstname"
                                 placeholder="Enter your first name...">
                         </div>
+                    </div>
+                    <small *ngIf="f.firstname?.invalid && f.firstname?.touched" class="text-danger">Please enter a first name.</small>
+                    </div>
                         <div class="col mb-3">
                             <label for="lastname" class="form-label">Lastname</label>
                             <input type="text" class="form-control" formControlName="lastname" id="lastname" placeholder="Enter your last name...">
+                        </div>
+                        </div>
+                        <small *ngIf="f.lastname?.invalid && f.lastname?.touched" class="text-danger">Please enter a last name.</small>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
                         <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter your email address...">
                     </div>
+                </div>
+                <small *ngIf="f.email?.invalid && f.email?.touched" class="text-danger">Please enter a email.</small>
+                </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="text" class="form-control" formControlName="password" id="password" placeholder="Enter your password...">
                     </div>
+                </div>
+                <small *ngIf="f.password?.invalid && f.password?.touched" class="text-danger">Please enter a password.</small>
+                </div>
                     <div class="mb-3">
                         <label for="streetaddress" class="form-label">Street address</label>
                         <input type="text" class="form-control" formControlName="streetaddress" id="streetaddress"
                             placeholder="Enter street address...">
                     </div>
+                </div>
+                <small *ngIf="f.streetaddress?.invalid && f.streetaddress?.touched" class="text-danger">Please enter a street address.</small>
+                </div>
                     <div class="row">
                         <div class="col mb-3">
                             <label for="city" class="form-label">City</label>
                             <input type="text" class="form-control" formControlName="city" id="city" placeholder="Enter city...">
                         </div>
+                        
                         <div class="col mb-3">
                             <label for="state" class="form-label">State</label>
                             <select class="form-control" formControlName="state" id="state" name="state" required>
@@ -113,58 +128,11 @@
                         <button id="submit" class="btn btn-outline-success">Update</button>
                     </div>
                 </form>
-
-            </div>
-        </div>
-
-    </div>
-    </div>
-    <div>
-        <div id='footer'>
-            <div class="footer">
-                <footer class="DesktopFooter">
-                    <div class="DesktopFootertopContainer">
-                        <div class="BaseLayout">
-                            <div class="DesktopFootercontainer">
-                                <div class="DesktopFooterlinksContainer">
-                                    <div class="DesktopFooterlinksColumn"></div>
-                                    <div class="DesktopFooterlinksColumn">
-                                        <h6 class="DesktopFooterlinkColumnHeader">About Us</h6>
-                                        <a class="Anchor" href="about.html" target="_self" tabindex="0" title="Our Team"
-                                            data-nav-description="f - our ream">Our Team</a>
-                                        <a class="Anchor" href="#" target="_self" tabindex="0"
-                                            title="Investor Relations"
-                                            data-nav-description="f - investor relations">Investor Relations</a>
-                                        <a class="Anchor" href="#" target="_self" tabindex="0" title="Affiliates"
-                                            data-nav-description="f - affiliates">Affiliates</a>
-                                        <a class="Anchor" href="#" target="_self" tabindex="0" title="Careers"
-                                            data-nav-description="f - careers">Careers</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="BaseLayout">
-                        <div class="DesktopFooterbottomContainer">
-                            <div class="DesktopFootersmallText">
-                                <div class="DesktopFooterTandCterms1">
-                                    <a class="Anchor" href="#" target="_self" tabindex="0"
-                                        title="Terms &amp; Conditions"
-                                        data-nav-description="f - terms &amp; coconditions">Terms &amp; Conditions |</a>
-                                    <a class="Anchor" href="#" target="_self" tabindex="0" title="Privacy Policy"
-                                        data-nav-description="f - privacy policy">Privacy Policy</a>
-                                </div>
-                                <div class="DesktopFooterTandCterms2">
-                                    <div class="DesktopFooterTandC__copyright">Copyright 2022-2022 Soul Sounds, Inc.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </footer>
             </div>
         </div>
     </div>
-    <script src="../javascript/userProfile.js"></script>
-</body>
-
+    </div>
+            </div>
+        </div>
+    </div>
 </html>
