@@ -66,7 +66,7 @@ import { AboutComponent } from './components/about/about.component';
     DisplayMitchellProductsComponent,
     DisplayPioneerProductsComponent,
     LoadingSpinnerComponent,
-    OrdersComponent
+    OrdersComponent,
     HomeComponent
   ],
   imports: [
