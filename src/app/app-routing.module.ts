@@ -26,6 +26,7 @@ import { userProfileComponent } from './components/userProfile/userProfile.compo
 import { wishListComponent } from './components/wishList/wishList.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -55,7 +56,8 @@ const routes: Routes = [
   { path: "products/brand/pioneer", component: DisplayPioneerProductsComponent },
   { path: "cart", component: CartComponent },
   { path: "checkout", component: CheckoutComponent },
-  { path: "orders", component: OrdersComponent}
+  { path: "orders", component: OrdersComponent},
+  { path: "about", component: AboutComponent}
 ];
 
 @NgModule({

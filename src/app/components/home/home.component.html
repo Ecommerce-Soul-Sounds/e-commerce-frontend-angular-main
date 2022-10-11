@@ -87,7 +87,7 @@
                     </section>
                     <section class = "module module-grid-item u-negative">
                         <!-- This is a link that links the module to another page. Thus anywhere in this grid that is clicked will lead to said page.-->
-                        <a href = "/page would go here, such as /cart" target class = "module-link-layer u-negative">
+                        <a [routerLink]="['/products']" [queryParams]="{category: 'Pianos'}" target class = "module-link-layer u-negative">
                             <div class = "module-content-layer u-top-large u-top-small ">
                                 <h5 class = "module-heading--primary">
                                     the wine that fills the cup of silence
@@ -151,7 +151,7 @@
                                 The first step on your path to music.
                             </p>                            
                             <div class = "module-content-cta-links">
-                                <a href = "/page" class = "button" target>
+                                <a [routerLink]="['/products']" [queryParams]="{category: 'DJ Equipment'}" class = "button" target>
                                     See DJ Equipment
                                 </a>
                             </div>
@@ -165,7 +165,7 @@
                 </section>
                 <!-- This should just be one wide picture -->
                 <section class = "module module-full-width u-negative">
-                    <div data-link="/page" data-target class="module-link-layer u-negative">
+                    <div [routerLink]="['/products']" [queryParams]="{category: 'Woodwinds'}" data-target class="module-link-layer u-negative">
                         <div class = "module-content-layer u-right-large u-top-small">
                             <h5 class = "module-heading--primary">
                                 Music is the soundtrack of your life.
@@ -174,7 +174,7 @@
                                 We at Soul Sound hope you find the best equipment that speak to your soul. Dig Deep.
                             </p>                            
                             <div class = "module-content-cta-links">
-                                <a href = "/page" class = "button" target>
+                                <a [routerLink]="['/products']" [queryParams]="{category: 'Woodwinds'}" class = "button" target>
                                     Shop Soul Sounds
                                 </a>
                             </div>
@@ -200,7 +200,7 @@
                   <div class="DesktopFooter__linksColumn"></div>
                   <div class="DesktopFooter__linksColumn">
                     <h5 class="DesktopFooter__linkColumnHeader"> <br> </h5>
-                      <a class="Anchor" [routerLink] = "['/about']" tabindex="0" title="Our Team" data-nav-description="f - our ream">Our Team</a>
+                      <a [routerLink] = "['/about']" tabindex="0" title="Our Team" data-nav-description="f - our team">Our Team</a>
                       <a class="Anchor" href="#" target="_self" tabindex="0" title="Investor Relations" data-nav-description="f - investor relations">Investor Relations</a>
                       <a class="Anchor" href="#" target="_self" tabindex="0" title="Affiliates" data-nav-description="f - affiliates">Affiliates</a>
                       <a class="Anchor" href="#" target="_self" tabindex="0" title="Careers" data-nav-description="f - careers">Careers</a>
