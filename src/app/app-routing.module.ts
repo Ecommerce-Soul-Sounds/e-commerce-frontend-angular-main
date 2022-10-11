@@ -22,17 +22,20 @@ import { DisplayYamahaProductsComponent } from './components/brands/display-yama
 import { DisplayEtudeProductsComponent } from './components/brands/display-etude-products/display-etude-products.component';
 import { DisplayMitchellProductsComponent } from './components/brands/display-mitchell-products/display-mitchell-products.component';
 import { DisplayPioneerProductsComponent } from './components/brands/display-pioneer-products/display-pioneer-products.component';
+import { userProfileComponent } from './components/userProfile/userProfile.component';
+import { wishListComponent } from './components/wishList/wishList.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { HomeComponent } from './components/home/home.component';
-// import { UserProfileComponent } from './components/userProfile/userProfile.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
-  { path: "home", component: HomeComponent},
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "home", component: DisplayProductsComponent },
-  // { path: "account", component: UserProfileComponent },
+  { path: "home", component: HomeComponent },
+  { path: "account", component: userProfileComponent },
+  { path: "wishlist", component: wishListComponent },
+  { path: "orders", component: OrdersComponent },
+  { path: "products", component: DisplayProductsComponent },
   { path: "products/category/guitars", component: DisplayGuitarProductsComponent },
   { path: "products/category/keyboards", component: DisplayPianoProductsComponent },
   { path: "products/category/woodwinds", component: DisplayWoodwindsProductsComponent },

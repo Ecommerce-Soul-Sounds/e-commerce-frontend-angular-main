@@ -15,6 +15,7 @@ export class Order {
         this.orderPlacedDate = orderPlacedDate;
         this.status = status;
         this.cart = cart;
+
     }
     
 

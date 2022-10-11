@@ -1,3 +1,26 @@
+#updateAccountInfoForm
+{
+    /* border:lightgray 2px solid; */
+    
+    border-radius: 0px 0px 12px 12px;
+    padding-top: 0%;
+    padding-left: 1%;
+    justify-content: center;
+    margin: auto;
+    
+    animation: 0.5s ease-in-out 0s 1 slideInFromTop;
+
+}
+
+@keyframes slideInFromTop {
+  0% {
+      transform: translateY(-10%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
 .button {
     position: absolute;
     top:50%;
@@ -10,42 +33,50 @@
     min-width: 120px;
   }
  
-    input[type=text] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: #437BAC;
-      background-color: #FFFFFF;
-      color: white;
-    }
-    input[type=number] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border:#437BAC;
-      background-color: #FFFFFF;
-      color: white;
-    }
-    input[type=email] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: ;
-      background-color: #FFFFFF;
-      color: white;
-    }
-    input[id="state"] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: #437BAC;
-      background-color: #FFFFFF;
-      color: white;
-    }
-    body {
-      background-color: #DBDBDB;
-    }
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 1px solid #437BAC;
+  background-color: #FFFFFF;
+
+}
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 1px solid #437BAC;
+  background-color: #FFFFFF;
+}
+input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 1px solid #437BAC;
+  background-color: #FFFFFF;
+
+}
+
+#state {
+  width: 100%;
+  padding: 0px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 1px solid #437BAC;
+  background-color: #FFFFFF;
+
+}
+
+#formFile {
+  padding: 3px 12px;
+  border: 1px solid #437BAC;
+}
+
+#accountPicture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}

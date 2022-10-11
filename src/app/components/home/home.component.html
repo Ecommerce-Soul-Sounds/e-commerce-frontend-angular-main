@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<app-navbar></app-navbar>
 <!-- The HTML <head> tag is a container for metadata and links to scripts and stylesheets.-->
 <head>
     <link rel="stylesheet" href="../home/home.component.css">
+    
 
     <title>Soul Sounds, Sound That Speaks To The Soul - Soulsounds.com</title>
 
@@ -35,7 +36,7 @@
                     <!-- Defining a section of the grid -->
                     <section class = "module module-grid-item u-negative">
                         <!-- This is a data link that links the module to another page. Thus anywhere in this grid that is clicked will lead to said page.-->
-                        <div data-link = "/page would go here, such as /cart" data-target class = "module-link-layer u-negative">
+                        <div [routerLink]="['/products']" [queryParams]="{category: 'Drums'}" data-target class = "module-link-layer u-negative">
                             <div class = "module-content-layer u-top-large u-top-small ">
                                 <h5 class = "module-heading--primary">
                                     Where words fail,
@@ -47,8 +48,8 @@
                                 </p>
                                 <!-- This is in case we decide to add a button here saying click here or something, css styling in place-->
                                 <div class = "module-content-cta-links">
-                                    <a href = "/page here, same page as the data link above for the module" class = "button" target>
-                                        Music Sheets
+                                    <a [routerLink]="['/products']" [queryParams]="{category: 'Drums'}" class = "button" target>
+                                        Drums
                                     </a>
                                 </div>
                             
@@ -60,25 +61,26 @@
                                     </div>
                                 </div>
                                 <picture class = "module-bg-picture">
-                                    <img src = "/src/assets/images/drum-img.jfif">
+                                    <img src = "../../../assets/images/drum-img.jfif">
                                 </picture>
                             </div>
                         </div>
                     </section>
                     <section class = "module module-grid-item u-negative">
                         <!-- This is a link that links the module to another page. Thus anywhere in this grid that is clicked will lead to said page.-->
-                        <a href = "/page would go here, such as /cart" target class = "module-link-layer u-negative">
+                        <a [routerLink]="['/products']" [queryParams]="{category: 'Guitars'}" target class = "module-link-layer u-negative">
                             <div class = "module-content-layer u-top-large u-top-small ">
                                 <h5 class = "module-heading--primary">
                                     like a dream
                                 </h5>
                                 <p>
                                     Check Out Guitars
+                                    <a class="p" [routerLink]="['/products']" [queryParams]="{category: 'Guitars'}"></a>
                                 </p>
                             </div>
                             <div class = "module-bg-image-container">
                                 <picture class = "module-bg-picture">
-                                    <img src = "/src/assets/images/guitar-img.jfif">
+                                    <img src = "../../../assets/images/guitar-img.jfif">
                                 </picture>
                             </div>
                         </a>
@@ -96,7 +98,7 @@
                             </div>
                             <div class = "module-bg-image-container">
                                 <picture class = "module-bg-picture">
-                                    <img src = "/src/assets/images/keyboard-img.jfif">
+                                    <img src = "../../../assets/images/keyboard-img.jfif">
                                 </picture>
                             </div>
                         </a>
@@ -110,7 +112,7 @@
                         </div>
                         <div class = "module-bg-image-container">
                             <picture class = "module-bg-picture">
-                                <img src = "/src/assets/images/violin.jpg" class = "module-bg-image">
+                                <img src = "../../../assets/images/violin.jpg" class = "module-bg-image">
                             </picture>
                         </div>
                         <h5 class = "module-heading--badge">
@@ -123,7 +125,7 @@
                         </div>
                         <div class = "module-bg-image-container">
                             <picture class = "module-bg-picture">
-                                <img src = "/src/assets/images/jazz.jpg" class = "module-bg-image">
+                                <img src = "../../../assets/images/jazz.jpg" class = "module-bg-image">
                             </picture>
                         </div>
                     </a>
@@ -133,30 +135,30 @@
                         </div>
                         <div class = "module-bg-image-container">
                             <picture class = "module-bg-picture">
-                                <img src = "/src/assets/images/violin2.jpg" class = "module-bg-image">
+                                <img src = "../../../assets/images/violin2.jpg" class = "module-bg-image">
                             </picture>
                         </div>
                     </a>
                 </section>
                 <!-- This should just be one wide picture -->
                 <section class = "module module-full-width u-negative">
-                    <div data-link="/page" data-target class="module-link-layer u-negative">
+                    <div [routerLink]="['/products']" [queryParams]="{category: 'DJ Equipment'}" data-target class="module-link-layer u-negative">
                         <div class = "module-content-layer u-left-large u-top-small">
                             <h5 class = "module-heading--primary">
                                 bend a note, shake it and listen
                             </h5>
                             <p> 
-                                Our instruments are the first step on your path to music.
+                                The first step on your path to music.
                             </p>                            
                             <div class = "module-content-cta-links">
                                 <a href = "/page" class = "button" target>
-                                    See Instruments
+                                    See DJ Equipment
                                 </a>
                             </div>
                         </div>
                         <div class = "module-bg-image-container">
                             <picture class = "module-bg-picture">
-                                <img src = "/src/assets/images/musicnote.jpg" height = "200" width = "500" class = "module-bg-image">
+                                <img src = "../../../assets/images/musicnote.jpg" height = "200" width = "500" class = "module-bg-image">
                             </picture>
                         </div>
                     </div>
@@ -179,7 +181,7 @@
                         </div>
                         <div class = "module-bg-image-container">
                             <picture class = "module-bg-picture">
-                                <img src = "/src/assets/images/long.jfif" class = "module-bg-image">
+                                <img src = "../../../assets/images/long.jfif" class = "module-bg-image">
                             </picture>
                         </div>
                     </div>
@@ -198,7 +200,7 @@
                   <div class="DesktopFooter__linksColumn"></div>
                   <div class="DesktopFooter__linksColumn">
                     <h5 class="DesktopFooter__linkColumnHeader"> <br> </h5>
-                      <a class="Anchor" href="about.html" target="_self" tabindex="0" title="Our Team" data-nav-description="f - our ream">Our Team</a>
+                      <a class="Anchor" [routerLink] = "['/about']" tabindex="0" title="Our Team" data-nav-description="f - our ream">Our Team</a>
                       <a class="Anchor" href="#" target="_self" tabindex="0" title="Investor Relations" data-nav-description="f - investor relations">Investor Relations</a>
                       <a class="Anchor" href="#" target="_self" tabindex="0" title="Affiliates" data-nav-description="f - affiliates">Affiliates</a>
                       <a class="Anchor" href="#" target="_self" tabindex="0" title="Careers" data-nav-description="f - careers">Careers</a>

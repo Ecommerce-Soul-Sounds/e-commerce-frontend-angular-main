@@ -38,7 +38,7 @@ export class NavbarComponent implements OnInit{
 
   retrieveByBrand(brand: string) {
     if (sessionStorage.getItem("loggedIn") === "true") {
-      this.router.navigate(['home'], {
+      this.router.navigate(['products'], {
         queryParams: {
           brand:`${brand}`
         },
@@ -53,7 +53,7 @@ export class NavbarComponent implements OnInit{
   retrieveByCategory(category: string) {
     if (sessionStorage.getItem("loggedIn") === "true") {
       
-      this.router.navigate(['home'], {
+      this.router.navigate(['products'], {
         queryParams: {
           category:`${category}`
         },
@@ -70,7 +70,7 @@ export class NavbarComponent implements OnInit{
     console.log(localStorage.getItem("mode"));
     
     if (localStorage.getItem("mode") === "dark") {
-      
+      document.getElementById('favIcon')?.setAttribute('href', "../../../assets/images/favicon_dark.png");
       let darkModeToggler = document.getElementById("checkbox");
       darkModeToggler?.setAttribute("checked", "true");
 
@@ -138,12 +138,13 @@ export class NavbarComponent implements OnInit{
   }
   
   get isLoggedIn(){
-    
-    if (sessionStorage.getItem("loggedIn") === "true") {
-      
+    let loggedInUser = JSON.parse(sessionStorage.loggedInUser || "{}");
+
+    if (Object.keys(loggedInUser).length !== 0) {
+      sessionStorage.setItem("loggedIn", "true");
       return true;
     } else {
-      
+      sessionStorage.setItem("loggedIn", "false");
       return false;
     }
     

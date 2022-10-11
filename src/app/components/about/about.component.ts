@@ -12,13 +12,8 @@ interface aboutImage {
 })
 export class AboutComponent implements OnInit {
 
-<<<<<<< HEAD
-    // @Input() images: aboutImage[] = []
-    // @Input indicators = true;
-    // @Input () controls = true;
-    // @Input() autoSlide = false;
-    // @Input() slideInterval = 3000; //default to 3 second interval between slides
-=======
+    @Input() images: aboutImage[] = [];
+
     @Input() images: aboutImage[] = [
       {
         imageSrc:
@@ -66,25 +61,15 @@ export class AboutComponent implements OnInit {
         imageAlt: 'sam',
       },
   ];
-    @Input() indicators = true;
-    @Input () controls = true;
-    @Input() autoSlide = false;
-    @Input() slideInterval = 3000; //default to 3 second interval between slides
->>>>>>> c7501e9dc49fc9dda4ad030f7190616b4ff10081
 
 
     selectedIndex = 0
 
     ngOnInit(): void {
-<<<<<<< HEAD
-      // if(this.autoSlide){
-      //   autoSlideImages();
-      // }
-=======
       if(this.autoSlide){
         this.autoSlideImages();
       }
->>>>>>> c7501e9dc49fc9dda4ad030f7190616b4ff10081
+
     }
 
     // Changes slide in every 3 second interval
@@ -120,49 +105,50 @@ export class AboutComponent implements OnInit {
     // Commenting out to see if above fix works, below was original code
     /*images = [
         {
-          imageSrc:
-            '/src/assets/images/david.jfif',
-          imageAlt: 'david',
-        },
-        {
-          imageSrc:
-            '/src/assets/images/jerry.jfif',
-          imageAlt: 'jerry',
-        },
-        {
-          imageSrc:
-            '/src/assets/images/tristan.jfif',
-          imageAlt: 'tristan',
-        },
-        {
-          imageSrc:
-            '/src/assets/images/bruce.jfif',
-          imageAlt: 'bruce',
-        },
-        {
-          imageSrc:
-            '/src/assets/images/joel.jfif',
-          imageAlt: 'joel',
-        },
-        {
-          imageSrc:
-            '/src/assets/images/salvator.jfif',
-          imageAlt: 'salvator',
-        },
-        {
-          imageSrc:
-            '/src/assets/images/raphael.jfif',
-          imageAlt: 'raphael',
-        },
-        {
-          imageSrc:
-            '/src/assets/images/varada.jfif',
-          imageAlt: 'varada',
-        },
-        {
-          imageSrc:
-            '/src/assets/images/sam.jfif',
-          imageAlt: 'sam',
-        },
+        imageSrc:
+          '../../../assets/images/david.jfif',
+        imageAlt: 'david',
+      },
+      {
+        imageSrc:
+          '../../../assets/images/jerry.jfif',
+        imageAlt: 'jerry',
+      },
+      {
+        imageSrc:
+          '../../../assets/images/tristan.jfif',
+        imageAlt: 'tristan',
+      },
+      {
+        imageSrc:
+          '../../../assets/images/bruce.jfif',
+        imageAlt: 'bruce',
+      },
+      {
+        imageSrc:
+          '../../../assets/images/joel.jfif',
+        imageAlt: 'joel',
+      },
+      {
+        imageSrc:
+          '../../../assets/images/salvator.jfif',
+
+        imageAlt: 'salvator',
+      },
+      {
+        imageSrc:
+          '../../../assets/images/raphael.jfif',
+        imageAlt: 'raphael',
+      },
+      {
+        imageSrc:
+          '../../../assets/images/varada.jfif',
+        imageAlt: 'varada',
+      },
+      {
+        imageSrc:
+          '../../../assets/images/sam.jfif',
+        imageAlt: 'sam',
+      },
     ] */
 }

@@ -4,6 +4,7 @@
         <h5 class="card-header justify-content-center">Orders</h5>
         <div class="card-body">
         <table class="table-light table-striped table-responsive">
+
             <thead>
                 <tr>
                     <th class="col-sm-3">Order #</th>
@@ -18,7 +19,9 @@
                     <td>{{order.orderPlacedDate}}</td>
                     <td>${{order.total}}</td>
                     <td>{{order.status.status}}</td>
+
                     <td><button class="btn btn-primary" (click)="viewOrderDetails(order.cart)">view order</button></td>
+
                 </tr>
             </tbody>
         </table>

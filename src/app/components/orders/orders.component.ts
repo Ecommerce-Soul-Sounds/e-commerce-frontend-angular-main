@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cart } from 'src/app/models/cart';
@@ -76,6 +77,7 @@ export class OrdersComponent implements OnInit {
   closeOrderDetails(){
     this.formModal.hide();
     location.reload();
+
   }
 
   

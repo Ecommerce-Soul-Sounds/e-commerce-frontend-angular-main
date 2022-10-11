@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -32,11 +31,12 @@ import { DisplayEtudeProductsComponent } from './components/brands/display-etude
 import { DisplayMitchellProductsComponent } from './components/brands/display-mitchell-products/display-mitchell-products.component';
 import { DisplayPioneerProductsComponent } from './components/brands/display-pioneer-products/display-pioneer-products.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
-//import { AboutModule } from './components/about/about.module';
 import { OrdersComponent } from './components/orders/orders.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
-
+import { userProfileComponent } from './components/userProfile/userProfile.component';
+import { wishListComponent } from './components/wishList/wishList.component';
+import { AboutModule } from './components/about/about.module';
 
 @NgModule({
   declarations: [
@@ -66,8 +66,10 @@ import { AboutComponent } from './components/about/about.component';
     DisplayMitchellProductsComponent,
     DisplayPioneerProductsComponent,
     LoadingSpinnerComponent,
-    OrdersComponent
-    HomeComponent
+    OrdersComponent,
+    HomeComponent,
+    userProfileComponent,
+    wishListComponent
   ],
   imports: [
     BrowserModule,
@@ -75,8 +77,8 @@ import { AboutComponent } from './components/about/about.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SweetAlert2Module
-    // AboutModule
+    SweetAlert2Module,
+    AboutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,19 +1,13 @@
-<!doctype html>
 <app-navbar></app-navbar>
-<html lang="en"> 
-<head>
-    <meta charset="utf-8">
-    <title>Wishlist - My Account</title>
-    <meta name="description" content="Manage My Wishlist">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="container">
+    <h1 class="text-center light-foreground mb-5">{{title}}</h1>
+    <app-loading-spinner id="loaderSpinner"></app-loading-spinner>
     <div class="row align-items-start">
-       <div class="col" *ngFor="products for wishlist">
-            <app-wish-List
+       <div class="col" *ngFor="let product of wishlistProducts">
+            <app-product-card
                 class="wishListItem"
                 [productInfo]="product"
-            ></app-wish-List> 
+            ></app-product-card> 
         </div> 
     </div>
 </div>
-<button class="btn btn-warning" (click)="addtoCart()">Add to Cart</button>
