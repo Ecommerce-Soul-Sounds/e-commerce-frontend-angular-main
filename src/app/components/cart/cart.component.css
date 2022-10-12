@@ -1,6 +1,17 @@
-.table 
-{
-    margin-top: 3%;
+#plusBtn{
+    display: flex;
+    margin: auto;
+    color: black;
+}
+
+#minusBtn{
+    display: flex;
+    margin: auto;
+    color: black;
+}
+
+#quantity{
+    margin-left: 30px;
 }
 
 .btn

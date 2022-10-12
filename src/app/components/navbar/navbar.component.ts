@@ -21,17 +21,23 @@ export class NavbarComponent implements OnInit{
 
   loggedInUser!: string;
 
+  imageSrc: string | ArrayBuffer| null = "";
+
   // This is getting child elements rendered with ngIf
   @ViewChildren('navLinkLight') navLinkLightBtns!: QueryList<ElementRef>;
 
   constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router, private productService: ProductService) { }
   
   ngOnInit(): void {
-    this.subscription = this.productService.getCart().subscribe(
-      (cart) => this.cartCount = cart.cartCount
+    this.subscription = this.productService.getUserCart().subscribe(
+      (cart) => {
+        this.cartCount = cart.totalQuantity;
+        console.log(cart); 
+      }
     );
 
     let loggedInUser = JSON.parse(sessionStorage.loggedInUser || "{}");
+    this.imageSrc = `data:image/jpg;base64,${loggedInUser.picture}`;
     
     this.userName = `${loggedInUser.firstName} ${loggedInUser.lastName}`;
   }
@@ -138,8 +144,9 @@ export class NavbarComponent implements OnInit{
   }
   
   get isLoggedIn(){
+    
     let loggedInUser = JSON.parse(sessionStorage.loggedInUser || "{}");
-
+    //console.log(loggedInUser);
     if (Object.keys(loggedInUser).length !== 0) {
       sessionStorage.setItem("loggedIn", "true");
       return true;

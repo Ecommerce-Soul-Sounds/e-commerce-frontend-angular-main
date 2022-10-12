@@ -3,11 +3,31 @@
     <h1 class="text-center light-foreground mb-5">{{title}}</h1>
     <app-loading-spinner id="loaderSpinner"></app-loading-spinner>
     <div class="row align-items-start">
-       <div class="col" *ngFor="let product of wishlistProducts">
-            <app-product-card
+        <div class="col mb-2" *ngFor="let product of wishlistProducts">
+            <div class="row justify-content-center">
+                <app-product-card
                 class="wishListItem"
                 [productInfo]="product"
             ></app-product-card> 
+            </div>
         </div> 
     </div>
 </div>
+
+<!-- <div class="modal fade" id="orderItemsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  mw-100 w-75">
+      <div class="modal-content light-background">
+        <div class="modal-header">
+          <h5 class="modal-title light-foreground" id="exampleModalLabel">Order Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeMessage()"></button>
+        </div>
+        <div class="modal-body">
+            <p class="light-foreground">HELLO</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="closeMessage()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->

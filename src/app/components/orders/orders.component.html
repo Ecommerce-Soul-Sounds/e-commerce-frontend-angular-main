@@ -1,25 +1,27 @@
 <app-navbar></app-navbar>
 <div class="container p-3">
-    <div class="card text-center">
-        <h5 class="card-header justify-content-center">Orders</h5>
-        <div class="card-body">
-        <table class="table-light table-striped table-responsive">
+    <div class="card text-center light-background ">
+        <h5 class="light-foreground card-header justify-content-center">Orders</h5>
+        <div class="card-body light-background">
+        <table class="table-light table-striped table-responsive light-background-2" aria-label="Previous Placed Order Details">
 
             <thead>
-                <tr>
-                    <th class="col-sm-3">Order #</th>
+                <tr class="light-foreground">
+                    <th class="col-sm-3">Order ID</th>
                     <th class="col-sm-3">Date of order</th>
+                    <th class="col-sm-3">Number of Items</th>
                     <th class="col-sm-3">Total Cost</th>
+                    <th class="col-sm-3">Order Status</th>
                     <th class="col-sm-3">Order Status</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="light-foreground">
                 <tr *ngFor="let order of orders">
                     <td>{{order.id}}</td>
                     <td>{{order.orderPlacedDate}}</td>
-                    <td>${{order.total}}</td>
+                    <td>{{order.cart.totalQuantity}}</td>
+                    <td>${{order.total.toFixed(2)}}</td>
                     <td>{{order.status.status}}</td>
-
                     <td><button class="btn btn-primary" (click)="viewOrderDetails(order.cart)">view order</button></td>
 
                 </tr>
@@ -32,36 +34,37 @@
 
 
 <div class="modal fade" id="orderItemsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  mw-100 w-75">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Order Details</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeOrderDetails()"></button>
-        </div>
-        <div class="modal-body">
-            <table class="table table-striped" id="cart-table">
-                <thead>
-                  <tr class="light-foreground">
-                    <th scope="col"></th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Description</th>
+
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  mw-100 w-75">
+    <div class="modal-content light-background">
+      <div class="modal-header">
+        <h5 class="modal-title light-foreground" id="exampleModalLabel">Order Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeOrderDetails()"></button>
+      </div>
+      <div class="modal-body">
+          <table class="table table-striped" id="cart-table" aria-label="Previous Placed Order Items">
+              <thead>
+                <tr class="light-foreground">
+                  <th scope="col">Image</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody id="cart-table-body" class="light-foreground">
+                <app-loading-spinner style="display: none" id="loaderSpinner"></app-loading-spinner>
+                  <tr class="" *ngFor="let orderItems of cartItems;">
+                      <td><img [src]= "orderItems.product.image"></td>
+                      <td>{{orderItems.product.name}}</td>
+                      <td>{{orderItems.quantity}}</td>
+                      <td>{{orderItems.product.description.substring(0,250)}}</td>
                   </tr>
-                </thead>
-                <tbody id="cart-table-body">
-                  <app-loading-spinner style="display: none" id="loaderSpinner"></app-loading-spinner>
-                    <tr class="light-foreground" *ngFor="let orderItems of cartItems;">
-                        <td><img [src]= "orderItems.product.image"></td>
-                        <td>{{orderItems.product.name}}</td>
-                        <td>{{orderItems.quantity}}</td>
-                        <td>{{orderItems.product.description}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="closeOrderDetails()">Close</button>
-        </div>
+              </tbody>
+          </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="closeOrderDetails()">Close</button>
       </div>
     </div>
   </div>
+</div>

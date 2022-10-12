@@ -40,5 +40,17 @@ export class WishlistService {
 
     public getWishlistProducts(): Observable<WishlistItem[]> {
         return this.http.get<WishlistItem[]>(environment.baseUrl+this.wishlistUrl+"/items", {headers: environment.headers, withCredentials: environment.withCredentials});
-      }
+    }
+
+    public addToWishlist(productId: number): Observable<any> {
+        const payload = {productId:productId};
+        console.log(payload);
+        return this.http.post<any>(environment.baseUrl+ this.wishlistUrl+`/add-item`, productId, {headers: environment.headers, withCredentials: environment.withCredentials} )
+    }
+
+    public removeFromWishlist(productId: number): Observable<any> {
+        const payload = {productId:productId};
+        console.log(payload);
+        return this.http.delete<any>(environment.baseUrl+ this.wishlistUrl+`/delete-item?productId=${productId}`, {headers: environment.headers, withCredentials: environment.withCredentials} )
+    }
 }

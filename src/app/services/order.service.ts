@@ -24,7 +24,7 @@ export class OrderService {
 
 
   public submitOrder(): Observable<Order>{
-    return this.http.post<any>(environment.baseUrl+this.orderUrl+"/purchase",{headers: environment.headers});
+    return this.http.post<any>(environment.baseUrl+this.orderUrl+"/purchase", null, {headers: environment.headers, withCredentials: environment.withCredentials});
   }
 
   public getOrderItem(cartId: number): Observable<CartItem[]>{

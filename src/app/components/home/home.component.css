@@ -2,7 +2,7 @@ body {
     background: #ededed;
     color: #383838;
     cursor: auto;
-    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.555;
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
     line-height: .85em;
-    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
     font-weight: 400;
     letter-spacing: -.05em;
     color: #fff;
@@ -85,7 +85,7 @@ p {
     cursor: pointer;
     text-align: left;
     box-sizing: border-box;
-    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif"; 
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif; 
     font-size: 1rem;
     font-weight: 400;
     text-rendering: optimizeLegibility;
@@ -110,7 +110,7 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
     border-style: solid;
     border-width: 1px;
     cursor: pointer;
-    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
     font-weight: 400;
     line-height: normal;
     margin: 0 0 1rem;
@@ -132,7 +132,7 @@ blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, t
     height: 3.57143rem;
     line-height: 3.57143rem;
     transition: all .15s ease;
-    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
     letter-spacing: .07143rem;
     font-size: .85714rem;
     text-transform: uppercase;
@@ -229,7 +229,7 @@ Use the ::after selector to insert something after the content. */
 .module-grid-parent {
     font-style: normal;
     cursor: auto;
-    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
     line-height: 1.555;
     color: #000;
     font-size: 1rem;
@@ -251,7 +251,7 @@ Use the ::after selector to insert something after the content. */
 .module-grid-parent .module-grid-item:nth-child(1) {
     font-style: normal;
     cursor: auto;
-    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
     line-height: 1.555;
     font-size: 1rem;
     font-weight: 400;

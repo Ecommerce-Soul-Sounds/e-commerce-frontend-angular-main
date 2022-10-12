@@ -6,6 +6,8 @@ import { ProductService } from 'src/app/services/product.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
+declare var window: any;
+
 @Component({
   selector: 'app-display-products',
   templateUrl: './display-products.component.html',
@@ -17,13 +19,22 @@ export class DisplayProductsComponent implements OnInit {
   param: string = "";
   title: string = "All Products";
 
+  formModal:any;
+
+  pageError: string = "";
+
   constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private router: Router, private titleService: Title) { 
     this.titleService.setTitle("Products - Soul Sounds");
   }
 
 
+
   ngOnInit(): void {
-    
+
+    this.formModal = new window.bootstrap.Modal(
+      document.getElementById("errorModal")
+    );
+
     if (sessionStorage.getItem("loggedIn") === "true") {
       
       /**
@@ -41,11 +52,17 @@ export class DisplayProductsComponent implements OnInit {
             this.allProducts = resp;
           },
           (err) => {
+            hideLoader();
             console.log(err);
             if (err.status == 401) {
               sessionStorage.setItem("loggedIn", "false");
+              sessionStorage.removeItem("loggedInUser");
               this.router.navigate(['login']);
-            } 
+            } else if (err.status === 0) {
+              this.pageError = "Connection Error. Please check your connection and try again.";
+              this.viewErrorModal();
+              //this.router.navigate(['home']);
+            }
           },
           () => console.log("Products Retrieved")
         );
@@ -69,8 +86,13 @@ export class DisplayProductsComponent implements OnInit {
             console.log(err);
             if (err.status == 401) {
               sessionStorage.setItem("loggedIn", "false");
+              sessionStorage.removeItem("loggedInUser");
               this.router.navigate(['login']);
-            } 
+            } else if (err.status === 0) {
+              this.pageError = "Connection Error. Please check your connection and try again.";
+              this.viewErrorModal();
+              //this.router.navigate(['home']);
+            }
           },
           () => console.log("Products Retrieved")
         );
@@ -87,8 +109,12 @@ export class DisplayProductsComponent implements OnInit {
             console.log(err);
             if (err.status == 401) {
               sessionStorage.setItem("loggedIn", "false");
+              sessionStorage.removeItem("loggedInUser");
               this.router.navigate(['login']);
-            } 
+            } else if (err.status === 0) {
+              this.pageError = "Connection Error. Please check your connection and try again.";
+              this.viewErrorModal();
+            }
           },
           () => console.log("Products Retrieved")
         );
@@ -138,4 +164,14 @@ export class DisplayProductsComponent implements OnInit {
     this.ngUnsubscribe.complete();
   }
 
+  viewErrorModal(){
+    this.formModal.show();
+    
+    
+  }
+
+  closeErrorModal(nRoute: string | undefined){
+    this.formModal.hide();
+    this.router.navigate([`${nRoute}`]);
+  }
 }

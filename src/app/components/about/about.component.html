@@ -1,48 +1,111 @@
-<div *ngIf = "images && images.length > 0" class = "slider-module-container">
-    <img *ngFor = "let image of images; let i = index" 
-    [src] = "image.imageSrc" [alt] = "image.imageAlt"
-    [ngClass] = "{'image-active': selectedIndex === i}"
-    class = "fade"
-    >
+   <app-navbar></app-navbar>
 
-    <div *ngIf = "indicators" class = "carousel-dot-container">
-        <span *ngFor = "let dot of images; let i = index" 
-            class = "dot"
-            [ngClass] = "{'active': selectedIndex === i}"
-            (click) = "selectedImage(i)"
-            >
-        </span>
-    </div>
+            <div class="about-section">
+                <h1 class = "light-foreground">About Soul Sounds</h1>
+                    <p class = "light-foreground">Soul Sounds started as an initiative from music lovers and non-music lovers alike. By bringing together different talents, we are able to provide our customers with both a passionate display of musical products and with a reliable way to procure them. Our team members are proud to serve you. </p>
+                    <p class = "light-foreground"><em>Thank you for choosing us.</em></p>
+            </div>
+    
+            <h2 class="text-center light-foreground mb-5">Our Team</h2>
+            <div class="row">
+                <div class="column">
+                    <div class="card light-background">
+                    <img src="../../../assets/images/david.jfif" alt="David" class="center">
+                    <div class="container">
+                        <h2 class = "light-foreground">David Winters</h2>
+                        <p class="title light-foreground">Scrum Leader</p>
+                        <p class = "light-foreground"><em>Make it work, make it right, make it fast.</em></p>
+                    </div >
+                </div>
+            </div>
 
-    <button *ngIf = "controls" class="btn-carousel btn-prev"
-        (click) = "onPrevClick()">
-        <i class="fas fa-arrow-circle-left icon-carousel icon-prev">
-        </i>
-    </button>
+            <div class="column">
+                <div class="card light-background">
+                    <img src="../../../assets/images/bruce.jfif" alt="Bruce" class="center">
+                    <div class="container">
+                        <h2 class = "light-foreground">Bruce Jones</h2>
+                        <p class="title light-foreground">Vice Scrum Leader/DevOps Lead</p>
+                        <p class = "light-foreground"><em>Research is the GPS to discovery</em></p>
+                    </div>
+                </div>
+            </div>
 
-    <button *ngIf = "controls" class="btn-carousel btn-next"
-        (click) = "onNextClick()">
-        <i class="fas fa-arrow-circle-right icon-carousel icon-next">
-        </i>
-    </button>
-</div>
-<body>
-    <br>
-    <br>
-    <h1>Team Soul Sounds</h1>
+            <div class="column">
+                <div class="card light-background">
+                    <img src="../../../assets/images/tristan.jfif" alt="Tristan" class="center">
+                    <div class="container">
+                        <h2 class = "light-foreground">Tristan</h2>
+                        <p class="title light-foreground" >Backend Leader</p>
+                        <p class = "light-foreground"><em>Code is like humor. When you have to explain it, it’s bad.</em></p>
+                    </div>
+                </div>
+            </div>
 
-    <app-about [images] = "images"
-        [autoSlide] = "true">
+            <div class="column">
+                <div class="card light-background">
+                    <img src="../../../assets/images/jerry.jfif" alt="Jerry" class="center">
+                    <div class="container">
+                        <h2 class = "light-foreground">Jerry Reeves</h2>
+                        <p class="title light-foreground">Frontend Lead</p>
+                        <p class = "light-foreground"><em>Java is to JavaScript what car is to Carpet.</em></p>
+                    </div>
+                </div>
+            </div>
 
-    </app-about>
-</body>
+            <div class="column">
+                <div class="card light-background">
+                    <img src="../../../assets/images/raphael.jfif" alt="Raphael" class="center">
+                    <div class="container">
+                        <h2 class = "light-foreground">Raphael Gakau</h2>
+                        <p class="title light-foreground">Full-Stack Member</p>
+                        <p class = "light-foreground"><em>Speech is silver, silence is golden</em></p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="column">
+                <div class="card light-background">
+                    <img src="../../../assets/images/varada.jfif" alt="Varada" class="center">
+                    <div class="container">
+                        <h2 class = "light-foreground">Varada Krishnadas</h2>
+                        <p class="title light-foreground">Frontend Member</p>
+                        <p class = "light-foreground"><em>Greatness is a choice</em></p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="column">
+                <div class="card light-background">
+                    <img src="../../../assets/images/sam.jfif" alt="Sam" class="center">
+                    <div class="container">
+                        <h2 class = "light-foreground">Samantha Freitas</h2>
+                        <p class="title light-foreground">Frontend Member</p>
+                        <p class = "light-foreground"><em>I have not failed. I’ve just found 10,000 ways that won’t work</em></p>
+                    </div>
+                </div>
+            </div>   
 
-<!-- if wanting to hide button indicators
-<app-carousel [images] = "images"
-    [autoSlide] = "true"
-    [indicators] = "false">
+            <div class="column">
+                <div class="card light-background">
+                    <img src="../../../assets/images/salvador.jfif" alt="Salvator" class="center">
+                    <div class="container">
+                        <h2 class = "light-foreground">Salvator</h2>
+                        <p class="title light-foreground">Backend Member</p>
+                        <p class = "light-foreground"><em>Before software can be reusable it first has to be usable.</em></p>
+                    </div>
+                </div>
+            </div>
 
-</app-carousel>
+            <div class="column">
+                <div class="card light-background">
+                <img src="../../../assets/images/joel.jfif" alt="Joel" class="center">
+                    <div class="container">
+                        <h2 class = "light-foreground">Joel</h2>
+                        <p class="title light-foreground">Backend Member</p>
+                        <p class = "light-foreground"><em>Simplicity is the soul of efficiency.</em></p>
+                    </div>
+                </div>
+            </div>
+            </div>
 
--->
+    <app-footer></app-footer>

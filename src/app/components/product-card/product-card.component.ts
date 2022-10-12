@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-product-card',
@@ -11,6 +13,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductCardComponent implements OnInit{
 
   cartCount!: number;
+  totalQuantity!: number;
   products: {
     product: Product,
     quantity: number
@@ -18,18 +21,17 @@ export class ProductCardComponent implements OnInit{
   subscription!: Subscription;
   totalPrice: number = 0;
 
+  wishlistClicked = false;
+  cartBtnClicked = false;
+
+  responseReceived = false;
+  response = "";
+
   @Input() productInfo!: Product;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private wishlistService: WishlistService, private router: Router) { }
   
   ngOnInit(): void {
-    this.subscription = this.productService.getCart().subscribe(
-      (cart) => {
-        this.cartCount = cart.cartCount;
-        this.products = cart.products;
-        this.totalPrice = cart.totalPrice;
-      }
-    );
 
     if (localStorage.getItem("mode") === "dark") {
       
@@ -74,79 +76,107 @@ export class ProductCardComponent implements OnInit{
   }
 
   addToCart(product: Product): void {
-
     let inCart = false;
 
     this.products.forEach(
       (element) => {
         if(element.product == product){
           ++element.quantity;
-          let cart = {
-            cartCount: this.cartCount + 1,
-            products: this.products,
-            totalPrice: this.totalPrice + product.price
-          };
-          this.productService.setCart(cart);
-          inCart=true;
-          return;
+
+          this.productService.addCartItem(product).subscribe(
+            (resp) => {
+              this.responseReceived = true;
+              this.response = resp.message;
+              alert(resp.message);
+            },
+            (error) => {
+              console.log(error);
+            }, 
+            () => {
+              this.productService.getUserCart().subscribe(
+                (cart) => {
+                  this.productService.setCart(cart);
+                },
+                (error) => {
+                  console.log(error);
+                  if (error.status == 401) {
+                    sessionStorage.setItem("loggedIn", "false");
+                    sessionStorage.removeItem("loggedInUser");
+                    this.router.navigate(['login']);
+                  }
+                },
+                () => {
+                  this.cartBtnClicked = false;
+                  inCart=true;
+                  return;
+                }
+              );
+            }
+          );
+          
         };
       }
     );
 
     if(inCart == false){
-      let newProduct = {
-        product: product,
-        quantity: 1
-      };
-      this.products.push(newProduct);
-      let cart = {
-        cartCount: this.cartCount + 1,
-        products: this.products,
-        totalPrice: this.totalPrice + product.price
-      }
-      this.productService.setCart(cart);
+      this.productService.addCartItem(product).subscribe(
+        (resp) => {
+          alert(resp.message);
+
+          this.productService.getUserCart().subscribe(
+            (cart) => {
+              this.productService.setCart(cart);
+              console.log(cart.totalQuantity);
+            },
+            (error) => {
+              console.log(error);
+              if (error.status == 401) {
+                sessionStorage.setItem("loggedIn", "false");
+                sessionStorage.removeItem("loggedInUser");
+                this.router.navigate(['login']);
+              }
+            },
+            () => {
+              this.cartBtnClicked = false;
+            }
+          );
+        } ,
+        (error) => {
+          console.log(error);
+        }, 
+        () => {
+          
+        }
+      );
     }
       
   }
 
   addToWishlist(product: Product): void {
-
-    let inCart = false;
-
-    this.products.forEach(
-      (element) => {
-        if(element.product == product){
-          ++element.quantity;
-          let cart = {
-            cartCount: this.cartCount + 1,
-            products: this.products,
-            totalPrice: this.totalPrice + product.price
-          };
-          this.productService.setCart(cart);
-          inCart=true;
-          return;
-        };
+    this.wishlistService.addToWishlist(product.id).subscribe(
+      (resp) => {
+        alert(resp.message);
+      },
+      (error) => {
+        console.log(error);
+        if (error.status == 401) {
+          sessionStorage.setItem("loggedIn", "false");
+          sessionStorage.removeItem("loggedInUser");
+          this.router.navigate(['login']);
+        }
+      }, 
+      () => {
       }
-    );
-
-    if(inCart == false){
-      let newProduct = {
-        product: product,
-        quantity: 1
-      };
-      this.products.push(newProduct);
-      let cart = {
-        cartCount: this.cartCount + 1,
-        products: this.products,
-        totalPrice: this.totalPrice + product.price
-      }
-      this.productService.setCart(cart);
-    }
-      
+    )
   }
 
+  resetResponse() {
+    this.responseReceived = false;
+    console.log(this.responseReceived);
+    
+  }
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
 }

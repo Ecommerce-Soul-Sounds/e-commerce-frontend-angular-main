@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 
@@ -10,9 +11,9 @@ import { Router } from '@angular/router';
 
 export class HomeComponent implements OnInit {
 
-    constructor() { }
+    constructor(private titleService: Title) { }
 
     ngOnInit(): void {
-        
+        this.titleService.setTitle("Home - Soul Sounds");
     }
 }
