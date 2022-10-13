@@ -22,4 +22,7 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it("should have a class 'module-bg-picture'", () => {
+    expect(component.document.querySelector('.module-bg-picture')?.classList).toBeTruthy();
+  });
 });

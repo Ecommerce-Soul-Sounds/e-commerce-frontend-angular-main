@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 interface aboutImage {
@@ -13,7 +14,7 @@ interface aboutImage {
 })
 export class AboutComponent implements OnInit {
 
-    constructor(private titleService: Title) {}
+    constructor(@Inject(DOCUMENT) public document: Document, private titleService: Title) {}
 
     ngOnInit(): void {
         this.titleService.setTitle("About us - Soul Sounds");

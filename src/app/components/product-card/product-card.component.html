@@ -54,10 +54,10 @@
       <hr class="mb-1" />
       <div class="col mt-2">
         <div class="row justify-content-center">
-          <button class="btn btn-primary" (click)="addToCart(productInfo)">Add to Cart</button>
+          <button class="btn btn-primary" [disabled]="cartBtnClicked"(click)="addToCart(productInfo); cartBtnClicked=true;">Add to Cart</button>
         </div>
         <div class="row justify-content-center">
-          <button class="btn border-0 p-1 m-1 btn-outline-secondary" (click)="addToWishlist(productInfo)"><small class="light-foreground"><u>Add to Wishlist</u></small></button>
+          <button class="btn border-0 p-1 m-1 btn-outline-secondary" [disabled]='wishlistClicked' (click)="addToWishlist(productInfo); wishlistClicked=true;"><small class="light-foreground"><u>Add to Wishlist</u></small></button>
         </div>
         
       </div>

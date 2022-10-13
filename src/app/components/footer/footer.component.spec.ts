@@ -22,4 +22,7 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it("should have h5 with class 'DesktopFooter__linkColumnHeader'", () => {
+    expect(component.document.querySelector('.DesktopFooter__linkColumnHeader')?.classList).toBeTruthy();
+  });
 });

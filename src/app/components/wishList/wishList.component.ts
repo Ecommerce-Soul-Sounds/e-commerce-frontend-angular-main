@@ -8,6 +8,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { ProductService } from 'src/app/services/product.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
 
+
+
 @Component({
   selector: 'app-wishList',
   templateUrl: './wishList.component.html',
@@ -19,9 +21,12 @@ export class wishListComponent implements OnInit {
 
   title: string = "Wishlist";
 
+
   constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private router: Router, private titleService: Title, private wishlistService: WishlistService) { }
 
   ngOnInit(): void {
+
+
     this.titleService.setTitle("Wishlist - Soul Sounds Shop");
     let loggedInUser = JSON.parse(sessionStorage.loggedInUser || "{}");
 

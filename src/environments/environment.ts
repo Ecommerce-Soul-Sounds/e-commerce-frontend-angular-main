@@ -5,15 +5,15 @@
 export const environment = {
   production: false,
   withCredentials: true,
-  baseUrl: "http://localhost:8080",
+  baseUrl: "http://ec2-34-212-106-51.us-west-2.compute.amazonaws.com:8080",
   headers: {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': 'http://localhost:4200',
+    'Access-Control-Allow-Origin': 'http://ec2-34-212-106-51.us-west-2.compute.amazonaws.com:8080',
   },
 };
 
 
-
+// ec2-34-212-106-51.us-west-2.compute.amazonaws.com:8080
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

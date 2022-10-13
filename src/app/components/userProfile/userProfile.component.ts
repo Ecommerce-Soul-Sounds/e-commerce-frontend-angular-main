@@ -48,7 +48,10 @@ export class userProfileComponent implements OnInit {
       this.updateForm.get('zipcode')?.setValue(loggedInUser.address.zipcode);
 
       let profPic = document.getElementById("accountPicture") as HTMLImageElement;
-      this.imageSrc = `data:image/jpg;base64,${loggedInUser.picture}`;
+      if (loggedInUser.picture !== null) {
+        this.imageSrc = `data:image/jpg;base64,${loggedInUser.picture}`;
+      }
+      
 
       sessionStorage.setItem("loggedIn", "true");
       //this.loggedInUser = loggedInUser;

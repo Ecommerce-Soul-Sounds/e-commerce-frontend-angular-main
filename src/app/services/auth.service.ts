@@ -78,7 +78,7 @@ export class AuthService {
       {
         withCredentials: true,
         headers: {
-          'Access-Control-Allow-Origin': 'http://localhost:4200',
+          'Access-Control-Allow-Origin': 'http://soulsounds.s3-website-us-west-2.amazonaws.com/',
         }
       }
     );

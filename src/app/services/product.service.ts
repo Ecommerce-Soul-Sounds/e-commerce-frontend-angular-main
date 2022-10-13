@@ -77,7 +77,7 @@ export class ProductService {
   }
 
   public removeItem(item: CartItem): Observable<any>{
-    const payload = {id: item.id, productId: item.product.id, quantity: item.quantity}
+    const payload = {id: item.id, productId: item.product.id, quantity: 1}
     return this.http.delete<any>(environment.baseUrl+ this.cartUrl+`/delete-item`, {headers: environment.headers, withCredentials: environment.withCredentials, body: payload} )
   }
 

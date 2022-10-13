@@ -3,7 +3,7 @@ export class Payment {
     detail: string
 
     constructor (name: string, detail: string) {
-        this.name = name;
+        this.name=name;
         this.detail = detail;
     }
 }

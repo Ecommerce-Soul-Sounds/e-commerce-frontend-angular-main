@@ -22,4 +22,22 @@ describe('AboutComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it("should have a class for 'about-section'", () => {
+    expect(component.document.querySelector('.about-section')?.classList).toBeTruthy();
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

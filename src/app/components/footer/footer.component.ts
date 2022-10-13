@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class FooterComponent implements OnInit {
 
-    constructor() { }
+    constructor(@Inject(DOCUMENT) public document: Document) { }
 
     ngOnInit(): void {
         

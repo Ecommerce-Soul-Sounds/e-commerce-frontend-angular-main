@@ -29,7 +29,15 @@ export class NavbarComponent implements OnInit{
   constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router, private productService: ProductService) { }
   
   ngOnInit(): void {
-    this.subscription = this.productService.getUserCart().subscribe(
+    this.productService.getUserCart().subscribe(
+      (cart) => {
+        this.cartCount = cart.totalQuantity;
+        this.productService.setCart(cart);
+        console.log(cart); 
+      }
+    );
+
+    this.subscription = this.productService.getCart().subscribe(
       (cart) => {
         this.cartCount = cart.totalQuantity;
         console.log(cart); 
@@ -37,7 +45,9 @@ export class NavbarComponent implements OnInit{
     );
 
     let loggedInUser = JSON.parse(sessionStorage.loggedInUser || "{}");
-    this.imageSrc = `data:image/jpg;base64,${loggedInUser.picture}`;
+    if (loggedInUser.picture !== null) {
+      this.imageSrc = `data:image/jpg;base64,${loggedInUser.picture}`;
+    }
     
     this.userName = `${loggedInUser.firstName} ${loggedInUser.lastName}`;
   }

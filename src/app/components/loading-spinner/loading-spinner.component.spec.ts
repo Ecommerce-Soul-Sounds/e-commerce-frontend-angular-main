@@ -20,4 +20,8 @@ describe('LoadingSpinnerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it("should have an h6 class 'light-foreground'", () => {
+    expect(component.document.querySelector('.light-foreground')?.classList).toBeTruthy();
+  });
 });
