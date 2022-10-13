@@ -88,8 +88,14 @@ export class CheckoutComponent implements OnInit {
 
   onSubmit(): void {
     this.orderService.submitOrder().subscribe(
-      (resp) => console.log(resp),
-      (err) => console.log(err),
+      (resp) => {
+        console.log(resp);
+        this.router.navigate(['/orders']);
+      },
+      (err) => {
+        console.log(err);
+        this.router.navigate(['/orders']); 
+      },
       () => {
         alert("Order submitted successfully.");
         this.router.navigate(['/home']);
